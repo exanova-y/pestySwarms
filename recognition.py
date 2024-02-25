@@ -3,6 +3,15 @@ import numpy as np
 
 cap = cv2.VideoCapture(0)  # Use the first webcam. can experiment with 0, 1, 2 etc.
 
+robot = PA3400{'host': '192.168.0.168', 'port': 22}
+
+robot.connect()
+robot.enable()
+
+robot.maxSpeed = 30
+pos = [-200, -155, 244, 179.99, 90, -180, 2]
+robot.movec(pos)
+
 while True: # continuously capture frames from the webcam
     _, frame = cap.read() 
     # convert from OpenCV's BGR space to HSV
@@ -44,6 +53,7 @@ while True: # continuously capture frames from the webcam
 
         if 0 < centroid_x <= 200:
             print("1")
+
         elif 200 < centroid_x <= 400:
             print("2")
         elif 400 < centroid_x <= 600:
