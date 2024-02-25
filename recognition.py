@@ -34,7 +34,7 @@ while True: # continuously capture frames from the webcam
         # print(f"Area: {area}, circularity ratio (close to 1 is good): {circularity_ratio}")
         centroid_x = 0
 
-        if area > 500 and circularity_ratio > 0.7:
+        if area > 300 and circularity_ratio > 0.7:
             # (0, 0) is the top left corner of the image
             x, y, w, h = cv2.boundingRect(cnt)
             cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2) # a bounding rectangle
