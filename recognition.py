@@ -1,7 +1,7 @@
 import cv2 # the OpenCV library
 import numpy as np
 
-cap = cv2.VideoCapture(0)  # Use the first webcam. can experiment with 0, 1, 2 etc.
+cap = cv2.VideoCapture(1)  # Use the first webcam. can experiment with 0, 1, 2 etc.
 
 while True: # continuously capture frames from the webcam
     _, frame = cap.read() 
@@ -42,7 +42,26 @@ while True: # continuously capture frames from the webcam
             centroid_y = y + h//2
             print(f"Centroid: ({centroid_x}, {centroid_y})")  # Print coordinates
 
-        if centroid_x
+        if 0 < centroid_x <= 200:
+            print("1")
+        elif 200 < centroid_x <= 400:
+            print("2")
+        elif 400 < centroid_x <= 600:
+            print("3")
+        elif 600 < centroid_x <= 800:
+            print("4")
+        elif 800 < centroid_x <= 1000:
+            print("5")
+        elif 1000 < centroid_x <= 1200:
+            print("6")
+        elif 1200 < centroid_x <= 1400:
+            print("7")
+        elif 1400 < centroid_x <= 1600:
+            print("8")
+        elif 1600 < centroid_x <= 1800:
+            print("9")
+        elif 1800 < centroid_x <= 2000:
+            print("10")
 
     cv2.imshow('Frame', frame)
     cv2.imshow('Mask', mask)
