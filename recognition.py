@@ -9,14 +9,16 @@ while True: # continuously capture frames from the webcam
     # HSV can separate each colour in the H value and more understandable to humans
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV) 
 
-    lower_orange = np.array([15, 50, 50]) # lowest HSV, respectively
-    upper_orange = np.array([40, 100, 100]) # highest HSV
+
+    # use a colour bound with as a heuristic
+    lower_orange = np.array([33, 48, 89]) # lowest HSV, respectively
+    upper_orange = np.array([24, 74, 65]) # highest HSV
     mask = cv2.inRange(hsv, lower_orange, upper_orange) 
     contours, _ = cv2.findContours(mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
     for cnt in contours: # for all the identified counter
         area = cv2.contourArea(cnt)
-        if area > 500:  # Min area of 500 pixels to reduce noise
+        if area > 100:  # Min area of 500 pixels to reduce noise
             # (0, 0) is the top left corner of the image
             x, y, w, h = cv2.boundingRect(cnt)
             cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2) # a bounding rectangle
