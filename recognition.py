@@ -1,7 +1,7 @@
 import cv2 # the OpenCV library
 import numpy as np
 
-cap = cv2.VideoCapture(1)  # Use the first webcam. can experiment with 0, 1, 2 etc.
+cap = cv2.VideoCapture(0)  # Use the first webcam. can experiment with 0, 1, 2 etc.
 
 while True: # continuously capture frames from the webcam
     _, frame = cap.read() 
