@@ -31,8 +31,9 @@ while True: # continuously capture frames from the webcam
         circularity_ratio = 10 # initialize ratio to an impossibly large value
         if perimeter != 0: # avoid division by 0
             circularity_ratio = (4*np.pi*area)/(perimeter**2)  
-        print(f"Area: {area}, circularity ratio (close to 1 is good): {circularity_ratio}")
-        
+        # print(f"Area: {area}, circularity ratio (close to 1 is good): {circularity_ratio}")
+        centroid_x = 0
+
         if area > 500 and circularity_ratio > 0.7:
             # (0, 0) is the top left corner of the image
             x, y, w, h = cv2.boundingRect(cnt)
@@ -40,6 +41,8 @@ while True: # continuously capture frames from the webcam
             centroid_x = x + w//2
             centroid_y = y + h//2
             print(f"Centroid: ({centroid_x}, {centroid_y})")  # Print coordinates
+
+        if centroid_x
 
     cv2.imshow('Frame', frame)
     cv2.imshow('Mask', mask)
