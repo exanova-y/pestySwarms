@@ -6,4 +6,5 @@ Current gap: Existing drone companies have limited efficiency. This project inte
 
 The basic proof of concept would involve identifying pests vs healthy plants, and implementing it on >1 robots scalable via a swarm intelligence algorithm (e.g. particle swarm optimization).   
 
-Feb 24: A simple computer vision algorithm is written to distinguish oranges, which represents pests. It is implemented on a robotic arm with 360 vision.
+A simple computer vision algorithm is written to distinguish oranges, which represents pests. It is implemented on a robotic arm with 360 vision.
+Also, a code was written to connect and program the Gordon robot.
